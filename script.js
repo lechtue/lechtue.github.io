@@ -57,7 +57,7 @@ const getPlayListItems = async playlistID => {
 };
 
 //Xu li Item de lay Title video va videoId
-getPlayListItems("UUWovDkXc7w0821EaKmznmCA")
+getPlayListItems("PLRBp0Fe2GpglTnOLbhyrHAVaWsCIEX53Y")
 .then(data => {
 	data.forEach(item => {
     	item.items.forEach(i => listVid.push({title: i.snippet.title, idVid: i.snippet.resourceId.videoId}));
@@ -77,7 +77,7 @@ getPlayListItems("UUWovDkXc7w0821EaKmznmCA")
 function changeAPIKey(newKey, err) {
 	if (err.response.data.error.errors[0].reason == "dailyLimitExceeded") {
 		apiKey = newKey;
-		getPlayListItems("UUWovDkXc7w0821EaKmznmCA")
+		getPlayListItems("PLRBp0Fe2GpglTnOLbhyrHAVaWsCIEX53Y")
 		.then(data => {
 			data.forEach(item => {
 	    	item.items.forEach(i => listVid.push({title: i.snippet.title, idVid: i.snippet.resourceId.videoId}));
