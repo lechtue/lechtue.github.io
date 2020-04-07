@@ -178,8 +178,7 @@ function prevSong() {
 	checkPrivateBack();
 	player.loadVideoById({videoId:listVid[rand].idVid});
 	para.innerHTML = listVid[rand].title;
-	musicPlayer.style.backgroundImage = "url('https://source.unsplash.com/random/600*250/?landscape')";
-	bg.style.backgroundImage = "url('https://source.unsplash.com/random/600*250/?landscape')";
+
 	playButton(true);			
 }
 
@@ -199,8 +198,6 @@ function nextSong() {
 	checkPrivate();
 	player.loadVideoById({videoId:listVid[rand].idVid});
 	para.innerHTML = listVid[rand].title;
-	musicPlayer.style.backgroundImage = "url('https://source.unsplash.com/random/600*250/?landscape')";
-	bg.style.backgroundImage = "url('https://source.unsplash.com/random/600*250/?landscape')";
 	playButton(true);
 
 }
@@ -214,8 +211,7 @@ function nextVideo() {
 		checkPrivate();
 		player.loadVideoById({videoId:listVid[rand].idVid});
 		para.innerHTML = listVid[rand].title;
-		musicPlayer.style.backgroundImage = "url('https://source.unsplash.com/random/600*250/?landscape')";
-		bg.style.backgroundImage = "url('https://source.unsplash.com/random/600*250/?landscape')";
+
 	}
 	
 }
