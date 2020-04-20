@@ -1,5 +1,5 @@
 
-const apiKeyList = ["AIzaSyAKkNJJh2kbSgl31RObQuuEaS_6oRzT30Q", "AIzaSyAvPUsjjqCxjx9ZlIZh-EcdiBAFbJOeoO0", "AIzaSyB56E3cgBh0TMpNi5WQJT9AMFtChFIeEIo"];
+const apiKeyList = ["AIzaSyAyY2NfWFpLDdC4Rl-6yfDuIFYG1MGprtg"];
 var apiKey = apiKeyList[0];
 var listVid = [];
 var listVideo;
