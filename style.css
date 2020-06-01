@@ -18,7 +18,9 @@ li {
 }
 
 a {
-  display: block;
+  display: inline-block;
+  height: 20px;
+  width: 10%;
   color: white;
   text-align: left;
   padding: 14px 16px;
