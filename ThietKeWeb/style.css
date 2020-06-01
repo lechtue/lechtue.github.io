@@ -12,3 +12,6 @@ a {
         padding: 14px 16px;
         text-decoration: none;
     }
+    nav {
+        border-bottom: 1px solid black;
+    }
