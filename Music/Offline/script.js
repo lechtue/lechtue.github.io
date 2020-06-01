@@ -1,43 +1,33 @@
 $(function()
 {
-    var playerTrack = $("#player-track");
-	var bgArtwork = $('#bg-artwork');
-	var bgArtworkUrl;
-	var albumName = $('#album-name');
-	var trackName = $('#track-name');
-	var albumArt = $('#album-art'),
-		sArea = $('#s-area'),
-		seekBar = $('#seek-bar'),
-		trackTime = $('#track-time'),
-		insTime = $('#ins-time'),
-		sHover = $('#s-hover'),
-		playPauseButton = $("#play-pause-button"),
-		i = playPauseButton.find('i'),
-		tProgress = $('#current-time'),
-		tTime = $('#track-length'),
-		seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0,
-		buffInterval = null, tFlag = false;
-	
-	var playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
-	
-	var songs = [{
-		artist: "Dig Didzay",
-		name: "Nếu Anh Đi (Cover)",
-		url: "Musics/NeuAnhDi.mp3",
-		picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
-	}];
-	
-	function shuffle(a) {
-		var j, x, i;
-		for (i = a.length - 1; i > 0; i--) {
-			j = Math.floor(Math.random() * (i + 1));
-			x = a[i];
-			a[i] = a[j];
-			a[j] = x;
-		}
-		return a;
-	}
-	songs = shuffle(songs);
+    var playerTrack = $("#player-track"), 
+    bgArtwork = $('#bg-artwork'),
+    bgArtworkUrl, 
+    albumName = $('#album-name'), 
+    trackName = $('#track-name'), 
+    albumArt = $('#album-art'), 
+    sArea = $('#s-area'), 
+    seekBar = $('#seek-bar'), 
+    trackTime = $('#track-time'), 
+    insTime = $('#ins-time'), 
+    sHover = $('#s-hover'), 
+    playPauseButton = $("#play-pause-button"),  
+    i = playPauseButton.find('i'), 
+    tProgress = $('#current-time'), 
+    tTime = $('#track-length'), 
+    seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, 
+    nTime = 0, buffInterval = null, tFlag = false, 
+    albums = ['Why Do I','Cánh Hoa Tổn Thương','Khóc Cùng Em'], 
+    trackNames = 
+    ['Unknown Brain','Hoàng Yến Chibi','Mr Siro, Gray, Wind'], 
+    albumArtworks = 
+    ['_1','_2','_3'], 
+    trackUrl = 
+    ['Musics/1.mp3',
+    'Musics/2.mp3',
+    'Musics/3.mp3'
+    ],
+    playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
 
     function playPause()
     {
@@ -164,7 +154,6 @@ $(function()
             tProgress.text('00:00');
             albumArt.removeClass('buffering').removeClass('active');
             clearInterval(buffInterval);
-			selectTrack(1);
 		}
     }
     
@@ -191,7 +180,7 @@ $(function()
         else
             --currIndex;
 
-        if( (currIndex > -1) && (currIndex < songs.length) )
+        if( (currIndex > -1) && (currIndex < albumArtworks.length) )
         {
             if( flag == 0 )
                 i.attr('class','fa fa-play');
@@ -205,12 +194,12 @@ $(function()
             trackTime.removeClass('active');
             tProgress.text('00:00');
             tTime.text('00:00');
-			
-			currAlbum = songs[currIndex].name;
-            currTrackName = songs[currIndex].artist;
-            currArtwork = songs[currIndex].picture;
 
-            audio.src = songs[currIndex].url;
+            currAlbum = albums[currIndex];
+            currTrackName = trackNames[currIndex];
+            currArtwork = albumArtworks[currIndex];
+
+            audio.src = trackUrl[currIndex];
             
             nTime = 0;
             bTime = new Date();
@@ -228,7 +217,11 @@ $(function()
 
             albumName.text(currAlbum);
             trackName.text(currTrackName);
-            $('#album-art img').prop('src', bgArtworkUrl);
+            albumArt.find('img.active').removeClass('active');
+            $('#'+currArtwork).addClass('active');
+            
+            bgArtworkUrl = $('#'+currArtwork).attr('src');
+
         }
         else
         {

@@ -28,10 +28,12 @@ body
     right: -30px;
     bottom: -30px;
     left: -30px;
-    background-image: url("./Background/RE1Ye6c_1920x1080.jpg");
+    background-image: url("Background/RE1Ye6c_1920x1080.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 20%;
+    background-position: 50%;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
     z-index: 1;
 }
 
