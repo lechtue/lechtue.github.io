@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(160, 252, 255);
+    font-family: 'Roboto', sans-serif;;
+}
+a:hover {
+    background-color: rgb(44, 223, 255);
+    }
+a {
+        display: block;
+        color: rgb(10, 10, 10);
+        text-align: left;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
