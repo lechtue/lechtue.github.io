@@ -13,5 +13,11 @@ a {
         text-decoration: none;
     }
     nav {
-        border-bottom: 1px solid black;
+        border-bottom: 3px solid black;
     }
+#I{
+    border-top: 3px solid rgb(0, 0, 0);
+}
+#II {
+    border-top: 3px solid rgb(0, 0, 0);
+}
